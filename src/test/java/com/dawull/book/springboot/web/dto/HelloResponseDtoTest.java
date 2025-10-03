@@ -19,11 +19,11 @@ public class HelloResponseDtoTest {
         assertThat(dto.getName()).isEqualTo(name);
         assertThat(dto.getAmount()).isEqualTo(amount);
         /*
-        * assertj 역시 Junit에서 자동으로 라이브러리 등록을 해줌
-        * Junit의 기본assertThat이 아닌 assertj의 assertThat을 사용.
-        * 장점:
-        * CoreMatchers와 달리 추가적으로 라이브러리가 필요하지않음
-        * 자동완성이 좀더 확실하게 지원됨
-        * */
+         * assertj 역시 Junit에서 자동으로 라이브러리 등록을 해줌
+         * Junit의 기본assertThat이 아닌 assertj의 assertThat을 사용.
+         * 장점:
+         * CoreMatchers와 달리 추가적으로 라이브러리가 필요하지않음
+         * 자동완성이 좀더 확실하게 지원됨
+         * */
     }
 }

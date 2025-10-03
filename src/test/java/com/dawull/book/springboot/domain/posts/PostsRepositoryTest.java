@@ -1,6 +1,5 @@
 package com.dawull.book.springboot.domain.posts;
 
-import org.aspectj.lang.annotation.After;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /* save, findAll 기능 테스트 진행 */
-
 
 @SpringBootTest
 public class PostsRepositoryTest {
