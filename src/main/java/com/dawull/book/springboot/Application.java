@@ -9,8 +9,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
  * 해당 어노테이션이 있는 위치부터 설정을 읽어가기 떄문에
  * 항상 프로젝트 최상단에 위치.
  */
-@EnableJpaAuditing // JPA Auditing 활성화
+
 @SpringBootApplication
+@EnableJpaAuditing // JPA Auditing 활성화
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);

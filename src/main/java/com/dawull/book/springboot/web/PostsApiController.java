@@ -2,8 +2,8 @@ package com.dawull.book.springboot.web;
 
 import com.dawull.book.springboot.service.posts.PostsService;
 import com.dawull.book.springboot.web.dto.PostsResponseDto;
-import com.dawull.book.springboot.web.dto.PostsUpdateRequestDto;
 import com.dawull.book.springboot.web.dto.PostsSaveRequestDto;
+import com.dawull.book.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +24,7 @@ public class PostsApiController {
     }
 
     @GetMapping("/api/v1/posts/{id}")
-    public PostsResponseDto findById(@PathVariable Long id){
+    public PostsResponseDto findById(@PathVariable Long id) {
         return postsService.findById(id);
     }
 
