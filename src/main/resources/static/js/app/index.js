@@ -7,24 +7,26 @@ var main = {
     },
     save : function () {
         var data = {
-            title: $('title').val(),
-            author: $('author').val(),
-            content: $('content').val()
+            title: $('#title').val(),
+            author: $('#author').val(),
+            content: $('#content').val()
         };
 
         $.ajax({
             type: 'POST',
             url: '/api/v1/posts',
             dataType: 'json',
-            cpmtentType: 'application/json'; charset=utf-8,
+            contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(data)
         }).done(function() {
             alert('글이 등록되었습니다.');
-            window.location.href = '/';
-        }).fail(function(error) {
+            window.location.href = '/'; /*등록성공 시 메인페이지(/)로 이동*/
+        }).fail(function (error) {
             alert(JSON.stringify(error));
         });
     }
 };
 
-main.init();
+$(document).ready(function() {
+    main.init();
+});
