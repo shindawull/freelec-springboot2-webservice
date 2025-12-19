@@ -9,8 +9,6 @@ import lombok.NoArgsConstructor;
  * 새언어 전환으로 롬복이 더 이상 필요없을 경우 삭제하기 땜.*/
 
 @Getter
-
-
 @NoArgsConstructor
 @Entity
 public class Posts extends BaseTimeEntity {
