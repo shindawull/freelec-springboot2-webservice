@@ -1,8 +1,10 @@
 package com.dawull.book.springboot.web;
 
+import com.dawull.book.springboot.config.auth.CustomOAuth2UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.is;
@@ -12,6 +14,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebMvcTest(controllers = HelloController.class)
 public class HelloControllerTest {
+
     @Autowired
     private MockMvc mockMvc;
 

@@ -11,7 +11,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
  */
 
 @SpringBootApplication
-@EnableJpaAuditing // JPA Auditing 활성화
+//@EnableJpaAuditing // JPA Auditing 활성화했다가 gradle test에서 jpa읽어서 분리함.
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
