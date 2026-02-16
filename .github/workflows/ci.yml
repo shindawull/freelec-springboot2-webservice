@@ -43,3 +43,27 @@ jobs:
       # Travis CI의 script: "./gradlew clean build"와 동일
       - name: Gradle 빌드
         run: ./gradlew clean build
+
+      - name: 빌드 파일 이름 변경
+        run: |
+          cd build/libs
+          mv *.jar application.jar
+
+      - name: 배포 파일 압축
+        run: |
+          mkdir -p deploy
+          cp build/libs/application.jar deploy/
+          cd deploy
+          zip -r ../deploy.zip .
+          cd ..
+
+      - name: AWS 자격 증명 설정
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-2
+
+      - name: S3에 업로드
+        run: |
+          aws s3 cp deploy.zip s3://freelec-springboot-build-dawull/deploy.zip
