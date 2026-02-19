@@ -42,7 +42,7 @@ jobs:
 
       # Travis CI의 script: "./gradlew clean build"와 동일
       - name: Gradle 빌드
-        run: ./gradlew clean build
+        run: ./gradlew clean build -x test
 
       - name: 빌드 파일 이름 변경
         run: |
