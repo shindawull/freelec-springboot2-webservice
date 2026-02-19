@@ -44,19 +44,10 @@ jobs:
       - name: Gradle 빌드
         run: ./gradlew clean build -x test
 
-      - name: 빌드 결과 확인 (디버깅)
-        run: |
-          echo "=== build 디렉토리 확인 ==="
-          ls -la build/
-          echo "=== build/libs 디렉토리 확인 ==="
-          ls -la build/libs/
-          echo "=== jar 파일 확인 ==="
-          find build -name "*.jar"
-
       - name: 빌드 파일 이름 변경
         run: |
           cd build/libs
-          mv *.jar application.jar
+          mv *SNAPSHOT.jar application.jar
 
       - name: 배포 파일 압축
         run: |
