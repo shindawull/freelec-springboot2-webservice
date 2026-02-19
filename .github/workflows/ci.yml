@@ -60,8 +60,8 @@ jobs:
       - name: AWS 자격 증명 설정
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-access-key: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: ap-northeast-2
 
       - name: S3에 업로드
