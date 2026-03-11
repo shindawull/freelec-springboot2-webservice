@@ -67,3 +67,13 @@ jobs:
       - name: S3에 업로드
         run: |
           aws s3 cp deploy.zip s3://freelec-springboot-build-dawull/deploy.zip
+
+      - name: CodeDeploy 배포 요청
+        run: |
+          aws deploy create-deployment \
+            --application-name freelec-springboot2-webservice \
+            --deployment-group-name freelec-springboot2-webservice-group \
+            --deployment-config-name CodeDeployDefault.AllAtOnce \
+            --s3-location bucket=freelec-springboot-build-dawull,bundleType=zip,key=deploy.zip
+          
+          
