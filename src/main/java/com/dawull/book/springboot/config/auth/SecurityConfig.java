@@ -28,7 +28,7 @@ public class SecurityConfig {
                                 .headers(headers -> headers.frameOptions(frame -> frame.disable()))
                                 // 인가 설정
                                 .authorizeHttpRequests(auth -> auth
-                                        .requestMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**")
+                                        .requestMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**", "/profile")
                                         .permitAll()
                                         .requestMatchers("/api/v1/**").hasRole(Role.USER.name())
                                         .anyRequest().authenticated()
