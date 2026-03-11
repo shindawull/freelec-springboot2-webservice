@@ -51,7 +51,7 @@ jobs:
 
       - name: 배포 파일 압축
         run: |
-          mkdir -p deploy
+          mkdir -p before-deploy
           cp scripts/*.sh before-deploy/
           cp appspec.yml before-deploy/
           cp build/libs/*.jar before-deploy/
