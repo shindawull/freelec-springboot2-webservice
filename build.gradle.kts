@@ -11,6 +11,9 @@ group = "com.dawull"
 //version = "1.0.1-SNAPSHOT-" + new Date().format("yyyyMMddHHmmss") 이렇게 해야하지만 groovy 동적문법 사용제한이 있음.
 version = "1.0.1-SNAPSHOT-" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"))
 
+tasks.named("jar") {
+		enabled = false
+}
 
 java {
 	toolchain {
@@ -46,4 +49,3 @@ dependencies {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
-
