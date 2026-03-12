@@ -44,6 +44,10 @@ jobs:
       - name: Gradle 빌드
         run: ./gradlew clean build -x test
 
+      - name: 빌드 파일 확인
+        run: |
+          ls -la build/libs/
+      
       - name: 빌드 파일 이름 변경
         run: |
           cd build/libs
