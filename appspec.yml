@@ -4,7 +4,7 @@ os: linux # EC2가 Ubuntu로 Linux
 # S3에서 받은 파일을 EC2어디에 복사할지 정의
 files:
   - source: / # S3에서 다운받은 압축 해제된 파일 전체
-    destination: /home/ec2-user/app/step2/zip  # 배포될 경로(복사될 경로)
+    destination: /home/ec2-user/app/step3/zip  # 배포될 경로(복사될 경로)
     overwrite: yes # 덮어쓰기
 
 # 복사된 파일들의 소유권을 누구로 설정할지 정의
@@ -19,10 +19,14 @@ permissions:
 
 hooks:
   AfterInstall:
-    - location: scripts/stop.sh
+    - location: scripts/stop.sh # 엔진엑스와 연결되어 있지 않은 스프링부트를 종료
       timeout: 60
       runas: ec2-user
   ApplicationStart:
-    - location: scripts/deploy.sh
+    - location: scripts/start.sh # 엔진엑스와 연결되어 있지 않은 port로 새버전의 스프링부트를 시작
+      timeout: 60
+      runas: ec2-user
+  ValidateService:
+    - location: scripts/health.sh # 새 스프링부트가 정상적으로 실행됬는지 확인
       timeout: 60
       runas: ec2-user
