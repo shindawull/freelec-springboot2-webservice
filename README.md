@@ -3,10 +3,15 @@
 - 이 프로젝트를 진행했던 날 기준으로 해당 책을 공부하였기 때문에 Spring boot, java, gradle version 에 따른 적용 방법이 상이할 수 있습니다.
 - 중지되었거나 사용하지 않는 버전, 기술들에 있어서 대체한 부분이 있기에 그 점을 참고해주시기 바랍니다.
 
-### 사용기술
+### 목적
+- AWS로 구현하는 웹 서비스 경험과 이해
+- 수동 CI/CD 와 자동 CI/CD 의 경함과 이해
+
+### 개발 환경
 - Spring Boot 3.4.3
 - Java 21
 - Gradle 8.13
 - JUnit5
 - Spring Security + OAuth2.0
 - Thymelef
+- Database : H2
